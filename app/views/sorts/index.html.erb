@@ -1,0 +1,12 @@
+<h1>Главная страница</h1>
+<%= form_for :sorts, url: sorts_path do |f| %>
+  <p>Ввод данных:<br>
+  <%= f.text_area :input %>
+  </p>
+  <p>
+    <%= f.submit 'Sort' %>
+  </p>
+  <p>Результат:<br>
+    <%= f.text_area :output %>
+  </p>
+<%end %>
