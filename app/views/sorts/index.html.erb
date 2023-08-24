@@ -1,12 +1,26 @@
-<h1>Главная страница</h1>
-<%= form_for :sorts, url: sorts_path do |f| %>
-  <p>Ввод данных:<br>
-  <%= f.text_area :input %>
-  </p>
-  <p>
-    <%= f.submit 'Sort' %>
-  </p>
-  <p>Результат:<br>
-    <%= f.text_area :output %>
-  </p>
-<%end %>
+<html>
+<head>
+  <title>Bubble Sort Project</title>
+  <%= csrf_meta_tag %>
+</head>
+<% content_for :input do%>
+  <%= form_for :show, url: { action: :new }, method: :get do |f|  %>
+    <p>
+      Введите данные:<br>
+      <%= text_area_tag :input, params[:input], class: 'form-control', :size =>"25x10"%>
+    </p>
+
+      <%= f.submit 'Show Time!', class: 'w-100 btn btn-lg btn-primary'%>
+  <% end %>
+
+<% end %>
+<% content_for :result do%>
+  <%= form_for  :show, url: { action: :new }, method: :get  do %>
+    <p>
+      Результат:<br>
+      <%= text_area_tag 'result', @show_result,disabled: true, class: 'form-control', :size =>"25x10"%>
+    </p>
+    <%= link_to 'Clear Result!', home_path, class: 'w-100 btn btn-lg btn-outline-primary'%>
+  <% end %>
+<% end %>
+
