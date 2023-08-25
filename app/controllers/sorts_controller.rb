@@ -6,6 +6,7 @@ class SortsController < ApplicationController
     render :index
   end
 
+
 #  def update
 #    @sort
 #  end
