@@ -1,0 +1,16 @@
+
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+        <img <%= image_tag("Chell_Logo.png", size: "80x80")%>
+        <svg xmlns="http://www.w3.org/2000/svg" width="0" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>BubbleWeb</title><path fill-rule="evenodd" clip-rule="evenodd" d="" fill="currentColor"></path></svg>
+        <span class="fs-4">Bubble Web Project</span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Random</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Support</a>
+        <a class="py-2 link-body-emphasis text-decoration-none" <%=link_to 'About Me', about_path %></a>
+      </nav>
+    </div>
+  </header>
