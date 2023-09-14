@@ -7,18 +7,22 @@
   <%= form_for :show, url: { action: :new }, method: :get do |f|  %>
     <p>
       Введите данные:<br>
-      <%= text_area_tag :input, params[:input], class: 'form-control', :size =>"25x10"%>
+      <%= text_area_tag :input, params[:input],
+                        class: 'form-control',
+                        :placeholder=>"Например: -1 0 1 2 3 или -1, 0, 1, 2, 3",
+                        :size =>"25x10"%>
     </p>
-
       <%= f.submit 'Show Time!', class: 'w-100 btn btn-lg btn-primary'%>
   <% end %>
 
 <% end %>
 <% content_for :result do%>
-  <%= form_for  :show, url: { action: :new }, method: :get  do %>
+  <%= form_for  :show, method: :get do %>
     <p>
       Результат:<br>
-      <%= text_area_tag 'result', @show_result,disabled: true, class: 'form-control', :size =>"25x10"%>
+      <%= text_area_tag 'result', @show_result,disabled: true, class: 'form-control',
+                        :placeholder=>"Здесь будет результат!",
+                        :size =>"25x10"%>
     </p>
     <%= link_to 'Clear Result!', home_path, class: 'w-100 btn btn-lg btn-outline-primary'%>
   <% end %>
