@@ -1,4 +1,5 @@
 class SortsController < ApplicationController
+
   def new
     @result = Bubblesort.send(:to_array, *params[:input])
     result = @result
