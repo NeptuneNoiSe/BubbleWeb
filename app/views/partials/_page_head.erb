@@ -2,8 +2,13 @@
     <nav class="navbar fixed-top bg-body-tertiary">
       <div class="container-fluid">
         <div>
-          <img class="img-fluid" <%=image_tag("Chell_Logo.png", size: "50x50")%>
-          <a class="navbar-brand"<%=link_to 'Bubble Web Project', home_path%>
+          <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+            <img class="img-fluid"  <%= image_tag("Chell_Logo.png", size: "50x50")%>
+            <svg xmlns="http://www.w3.org/2000/svg" width="0" height="32" class="me-2" viewBox="0 0 118 94" role="img">
+              <title>BubbleWeb Project</title>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="" fill="currentColor"></path>
+            </svg>
+            <span class="fs-5">Bubble Web Project</span>
           </a>
         </div>
         <nav class="ms-auto">
