@@ -1,0 +1,58 @@
+  <% content_for :forms do%>
+    <%= form_for :show, url: { action: :new }, method: :get do |f|  %>
+      <p>
+        Number of digits:<br>
+        <%= text_area_tag :input, params[:input_nog],
+                           class: 'form-control',
+                           :placeholder=>"Enter number of digits",
+                           :size =>"25x3"%>
+      </p>
+      <p>
+        Minimum number:<br>
+        <%= text_area_tag :input, params[:input_min],
+                           class: 'form-control',
+                           :placeholder=>"Enter minimum number",
+                           :size =>"25x3"%>
+      </p>
+      <p>
+        Maximum number:<br>
+        <%= text_area_tag :input, params[:input_max],
+                           class: 'form-control',
+                           :placeholder=>"Enter maximum number",
+                           :size =>"25x3"%>
+      </p>
+      <p>
+        Number of decimal places:<br>
+        <%= text_area_tag :input, params[:input_ndp],
+                           class: 'form-control',
+                           :placeholder=>"Enter numbers of decimal places",
+                           :size =>"25x3"%>
+      </p>
+      <%= f.submit 'Create!!!', class: 'w-100 btn btn-lg btn-primary'%>
+    <% end %>
+  <% end %>
+  <% content_for :unsorted do%>
+    <%= form_for :show, url: { action: :new }, method: :get do |f|  %>
+      <p>
+        Массив данных:<br>
+        <%= text_area_tag :input,  params[:input], disabled: true,
+                          class: 'form-control',
+                          :placeholder=>"Здесь будет масив чисел сгенерированный согласно заданным параметрам",
+                          :size =>"15x6"%>
+      </p>
+      <%= f.submit 'Sort!', class: 'w-100 btn btn-lg btn-primary'%>
+    <% end %>
+  <% end %>
+  <% content_for :sorted do%>
+    <%= form_for  :show, method: :get do %>
+      <p>
+        Результат:<br>
+        <%= text_area_tag 'result', @show_result,disabled: true, class: 'form-control',
+                          :placeholder=>"Здесь будет результат!",
+                          :size =>"15x6"%>
+      </p>
+      <%= link_to 'Clear Result!', random_path, class: 'w-100 btn btn-lg btn-outline-primary'%>
+    <% end %>
+  <% end %>
+
+

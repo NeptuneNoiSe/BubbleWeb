@@ -1,14 +1,10 @@
 class PagesController < ApplicationController
-  def about_me
-    render layout: 'about'
-  end
-
-  def random
-    render layout: 'random'
-  end
-
   def support
     render layout: 'support'
+  end
+  
+  def about_me
+    render layout: 'about'
   end
 
   def developer
