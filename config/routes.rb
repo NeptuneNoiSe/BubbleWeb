@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'sorts#index', as: 'home'
-  get 'random' => 'pages#random', as: 'random'
+  get 'random' => 'random#index', as: 'random'
   get 'support' => 'pages#support', as: 'support'
   get 'about_me' => 'pages#about_me', as: 'about'
   get 'developer' => 'pages#developer', as: 'developer'
@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'platform' => 'pages#platform', as: 'platform'
   get 'resources' => 'pages#resources', as: 'resources'
   get 'contacts' => 'pages#contacts', as: 'contacts'
-  resources :sorts
+  resources :sorts, :random
 end
