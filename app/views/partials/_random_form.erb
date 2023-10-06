@@ -5,16 +5,19 @@
       <h2>Random Massive Data</h2>
       <p class="lead">Enter parameters for random massive and sorted it!!!</p>
     </div>
-    <div class="row g-7">
+    <div class="row g-5">
+      <%= render partial:'random/partials/parameters_form'%>
       <div class="col-md-7">
-        <h4 class="mb-3">Massive Parameters</h4>
-        <%= render partial:'random/partials/parameters_form'%>
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your Result</span>
+        </h4>
+
+        <%= render partial:'random/partials/result_screen'%>
           <div class="row g-3">
           </div>
           <br>
           <br />
       </div>
-      <%= render partial:'random/partials/result_screen'%>
     </div>
   </main>
 </div>
