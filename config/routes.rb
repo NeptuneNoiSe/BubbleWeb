@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'platform' => 'pages#platform', as: 'platform'
   get 'resources' => 'pages#resources', as: 'resources'
   get 'contacts' => 'pages#contacts', as: 'contacts'
+  get 'sort_random' => 'random#sort'
   resources :sorts, :random
 end
