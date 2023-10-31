@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nod: MyString
+  min: MyString
+  max: MyString
+  ndp: MyString
+
+two:
+  nod: MyString
+  min: MyString
+  max: MyString
+  ndp: MyString

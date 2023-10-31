@@ -1,32 +1,34 @@
   <% content_for :forms do%>
-    <%= form_for :show, url: { action: :new }, method: :get do |f|  %>
+    <%= form_for :form_random, url: { action: :new }, method: :get do |f|  %>
+      <% if @forms.errors.any? %>
+        <% @forms.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+      <% end %>
       <p>
         Number of digits:<br>
-        <%= text_area_tag :nod, params[:nod],
-                           class: 'form-control',
-                           :placeholder=>"Enter number of digits",
-                           :size =>"25x1"%>
+        <%= f.text_field(:nod,
+                             {class: 'form-control',
+                           :placeholder=>"Enter number of digits"})%>
       </p>
       <p>
         Minimum number:<br>
-        <%= text_area_tag :min, params[:min],
+        <%= f.text_field(:min,
+                         {
                            class: 'form-control',
-                           :placeholder=>"Enter minimum number",
-                           :size =>"25x1"%>
+                           :placeholder=>"Enter minimum number"})%>
       </p>
       <p>
         Maximum number:<br>
-        <%= text_area_tag :max, params[:max],
+        <%= f.text_field(:max,{
                            class: 'form-control',
-                           :placeholder=>"Enter maximum number",
-                           :size =>"25x1"%>
+                           :placeholder=>"Enter maximum number", })%>
       </p>
       <p>
         Number of decimal places:<br>
-        <%= text_area_tag :ndp, params[:ndp],
+        <%= f.text_field(:ndp,{
                            class: 'form-control',
-                           :placeholder=>"Enter numbers of decimal places",
-                           :size =>"25x1"%>
+                           :placeholder=>"Enter numbers of decimal places"})%>
       </p>
       <%= f.submit 'Create!!!', class: 'w-100 btn btn-lg btn-primary'%>
 
@@ -36,7 +38,7 @@
     <%= link_to 'Clear Result!', random_path, class: 'w-100 btn btn-lg btn-outline-primary'%>
   <% end %>
   <% content_for :sorted do%>
-    <%= form_for :show,  url: { action: :sort }, method: :get do |f| %>
+    <%= form_for :result,  url: { action: :sort }, method: :get do |f| %>
       <p>
         Массив чисел:<br>
         <%= text_area_tag 'result',@result_random,disabled: true,
@@ -48,7 +50,7 @@
     <% end %>
   <% end %>
   <% content_for :avg do%>
-    <%= form_for :show, method: :get do %>
+    <%= form_for :avg_result, method: :get do %>
       <p>
         Среднее арифметическое:<br>
         <%= text_area_tag 'res',@avg,disabled: true,

@@ -1,13 +1,26 @@
-<html>
-<head>
-  <title>Bubble Web Project</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "bootstrap.css"%>
-  <%= stylesheet_link_tag "bootstrap", "data-turbo-track": "reload" %>
-  <%= stylesheet_link_tag "bubble"%>
-  <%= javascript_include_tag "color-modes.js"%>
-  <%= javascript_importmap_tags %>
-  <meta name="theme-color" content="#712cf9">
-</head>
+  <header>
+    <nav class="navbar fixed-top bg-body-tertiary">
+      <div class="container-fluid">
+        <div>
+          <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+            <img class="img-fluid"  <%= image_tag("Chell_Logo.png", size: "50x50")%>
+            <svg xmlns="http://www.w3.org/2000/svg" width="0" height="32" class="me-2" viewBox="0 0 118 94" role="img">
+              <title>BubbleWeb Project</title>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="" fill="currentColor"></path>
+            </svg>
+            <span class="fs-5">Bubble Web Project</span>
+          </a>
+        </div>
+        <nav class="ms-auto">
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" <%=link_to 'Random', random_path %>
+          </a>
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" <%=link_to 'Support', support_path %>
+          </a>
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" <%=link_to 'About Me', about_path %>
+          </a>
+        </nav>
+        <%= render partial:'partials/theme_button'%>
+      </div>
+    </nav>
+  </header>
+<div class="header"> </div>

@@ -1,4 +1,5 @@
 class Massive < ApplicationRecord
+
   def self.params(nod, min, max, ndp)
     a = nod.to_i
     b = min.to_f
