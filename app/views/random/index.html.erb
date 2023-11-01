@@ -35,7 +35,7 @@
     <% end %>
   <% end %>
   <% content_for :clear do%>
-    <%= link_to 'Clear Result!', random_path, class: 'w-100 btn btn-lg btn-outline-primary'%>
+
   <% end %>
   <% content_for :sorted do%>
     <%= form_for :result,  url: { action: :sort }, method: :get do |f| %>
@@ -44,9 +44,14 @@
         <%= text_area_tag 'result',@result_random,disabled: true,
                           class: 'form-control',
                           :placeholder=>"Здесь будет масив чисел сгенерированный согласно заданным параметрам",
-                          :size =>"15x6"%>
+                          :size =>"15x11"%>
       </p>
-      <%= f.submit 'Sort', class: 'w-100 btn btn-lg btn-primary'%>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <%= f.submit 'Sort', class: 'w-50 btn btn-lg btn-primary',disabled: @btn_var%>
+          <%= link_to 'Clear Result!', random_path, class: 'w-50 btn btn-lg btn-outline-primary'%>
+        </div>
+
+
     <% end %>
   <% end %>
   <% content_for :avg do%>

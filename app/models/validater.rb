@@ -30,4 +30,22 @@ class Validater < ApplicationRecord
                             message: 'Number of decimal places must be equal to or greater than 0.' },
             allow_blank: true
   )
+  # Limit number validates
+  validates(:nod,
+            length: {maximum: 7, message: 'Number of digits so big.' },
+            allow_blank: true
+  )
+  validates(:min,
+            length: {maximum: 7, message: 'Minimum of digits so big.' },
+            allow_blank: true
+  )
+  validates(:max,
+            length: {maximum: 7, message: 'Maximum of digits so big.' },
+            allow_blank: true
+  )
+  validates(:ndp,
+            numericality: { less_than_or_equal_to: 5,
+                            message: 'Number of decimal places so big' },
+            allow_blank: true
+  )
 end

@@ -2,6 +2,7 @@ class RandomController < ApplicationController
   layout 'random'
   def index
     @forms = Validater.new
+    @btn_var = true
   end
 
   def new
@@ -12,7 +13,9 @@ class RandomController < ApplicationController
       result = @result_random
       @avg = Massive.send(:avg, result)
       render :index
+      @btn_var = false
     else
+      @btn_var = true
       render :index
     end
   end
@@ -30,5 +33,6 @@ class RandomController < ApplicationController
 
   def form_params
     params.require(:form_random).permit(:nod, :min, :max, :ndp)
+
   end
 end
