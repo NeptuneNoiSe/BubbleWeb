@@ -10,13 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_30_125714) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_03_101223) do
   create_table "bubblesorts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "inputs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,16 +28,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_30_125714) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "supports", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "validaters", force: :cascade do |t|
     t.string "nod"
     t.string "min"
     t.string "max"
     t.string "ndp"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "validates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

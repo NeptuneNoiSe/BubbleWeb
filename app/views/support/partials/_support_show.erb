@@ -1,0 +1,17 @@
+<div class="container my-5">
+  <div class="bg-body-tertiary p-3 rounded">
+    <div class="col-sm-8 py-5 mx-auto">
+      <span class="text-success">Ваше сообщение сохранено</span>
+      <div class="border-top"></div>
+      <br>
+        <div class="card rounded-3 mb-4 p-md-2 mx-auto">
+        <h4 class="text-primary"><%=@support.title %></h4>
+        <p><%=@support.body %></p>
+        </div>
+      <div class="d-flex gap-2 justify-content-center py-1">
+        <%= link_to 'Back to Previous Page', support_index_path, class: 'w-10 btn btn-sm btn-primary'%>
+      </div>
+    </div>
+
+  </div>
+</div>
