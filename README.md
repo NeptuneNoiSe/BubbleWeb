@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web приложение, написанное на Ruby On Rails с использованием Bootstrap 5, для "пузырьковой" сортировки данных,
+а также, генерации рандомных масивов данных, с последующей их сортировкой.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

@@ -33,6 +33,5 @@ class RandomController < ApplicationController
 
   def form_params
     params.require(:form_random).permit(:nod, :min, :max, :ndp)
-
   end
 end

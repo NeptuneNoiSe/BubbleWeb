@@ -1,0 +1,15 @@
+<main class="container my-5">
+  <div class="bg-body-tertiary p-5 rounded">
+    <h1>Проблемки?!</h1>
+    <p class="lead">Тут можно описать любые проблемы с работой сайта</p>
+    <a class="btn btn-lg btn-primary" <%=link_to 'Add Message', new_support_path %> </a>
+  </div>
+</main>
+<h2 class="text-center"></h2>
+<div class="card mb-4 p-md-2 mx-auto rounded-3 shadow-sm">
+  <%@support.each do |support_msg| %>
+    <h3><%=support_msg.title %></h3>
+    <p><%=support_msg.body %></p>
+    <div class="border-top"></div>
+  <% end %>
+</div>
