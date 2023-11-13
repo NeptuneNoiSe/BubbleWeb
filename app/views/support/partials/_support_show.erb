@@ -1,17 +1,28 @@
-<div class="container my-5">
-  <div class="bg-body-tertiary p-3 rounded">
-    <div class="col-sm-8 py-5 mx-auto">
-      <span class="text-success">Ваше сообщение сохранено</span>
-      <div class="border-top"></div>
+<main class="container py-5">
+  <div>
+    <div class="py-5 mx-auto">
+      <div class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+          <h1 class="text-primary"><%=@support.title %></h1>
+        <div class=" ms-auto"> <%= link_to 'Back to Previous Page', support_index_path, class: 'w-10 btn btn-sm btn-primary'%> </div>
+
+          <div class=" btn btn-dark flex-shrink-0 dropdown">
+            <a class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg></a>
+            <ul class="dropdown-menu text-small shadow">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+      </div>
+      <div class="border"></div>
       <br>
-        <div class="card rounded-3 mb-4 p-md-2 mx-auto">
-        <h4 class="text-primary"><%=@support.title %></h4>
-        <p><%=@support.body %></p>
-        </div>
-      <div class="d-flex gap-2 justify-content-center py-1">
-        <%= link_to 'Back to Previous Page', support_index_path, class: 'w-10 btn btn-sm btn-primary'%>
+        <p><%=@support.body%></p>
+      <br>
       </div>
     </div>
 
-  </div>
-</div>
+
+</main>
