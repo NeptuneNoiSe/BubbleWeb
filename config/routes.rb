@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'contacts' => 'pages#contacts', as: 'contacts'
   get 'sort_random' => 'random#sort'
   get 'support' => 'support#index', as: 'support_index'
+  delete 'support/:id/delete' => 'support#destroy', as: 'support_delete'
+  get '/support/:id/delete' => 'support#destroy'
   resources :sorts
   resources :random
   resources :support

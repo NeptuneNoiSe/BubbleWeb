@@ -12,6 +12,27 @@ class SupportController < ApplicationController
     @support = Support.find(params[:id])
   end
 
+  def edit
+    @support = Support.find(params[:id])
+  end
+
+  def update
+    @support = Support.find(params[:id])
+    if @support.update(support_params)
+      redirect_to @support
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @support = Support.find(params[:id])
+    @support.destroy
+    params[:id] = nil
+    flash[:notice] = 'Message has been deleted'
+    redirect_to support_index_path
+  end
+
   def create
     @support = Support.new(support_params)
     if @support.save
