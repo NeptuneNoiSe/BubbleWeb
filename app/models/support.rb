@@ -1,4 +1,5 @@
 class Support < ApplicationRecord
+  has_many :comments, dependent: :destroy
   # Blank validates
   validates :title, presence: { message: "Theme can't be blank." }
   validates :body, presence: { message: "Text can't be blank." }

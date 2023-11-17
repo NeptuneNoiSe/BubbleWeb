@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   get '/support/:id/delete' => 'support#destroy'
   resources :sorts
   resources :random
-  resources :support
+  resources :support do
+    resources :comments
+  end
 end
