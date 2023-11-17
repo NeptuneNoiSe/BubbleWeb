@@ -23,4 +23,46 @@
       <br>
       </div>
     </div>
+
+  <!-- Comments window -->
+  <div class="container bg-body-tertiary p-5 rounded py-sm-5">
+    <h3 class="text-primary display-6 fw-normal">Комментарии:</h3>
+    <div class="list-group border-bottom">
+    <%@support.comments.each do |comments_msg| %>
+      <a class="list-group-item list-group-item-action py-3 lh-sm"> <!-- href="<%=support_path(comments_msg)%>" -->
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1"><h3><%=comments_msg.username %></h3></strong>
+        </div>
+        <div class="col-10 mb-1 small"><p><%=comments_msg.body %></p></div>
+      </a>
+    <% end %>
+    </div>
+  </div>
+
+  <div>
+    <br>
+        <h3 class="text-primary display-10 fw-normal">Добавить комментарий</h3>
+        <%= form_for([@support, @support.comments.build]) do |f| %>
+          <span>
+          Имя пользователя:<br>
+            <%= f.text_field(:username,
+                             {class: 'form-control',
+                              :placeholder=>"Имя пользователя: (Не больше 10 символов)"}) %>
+        </span>
+          <br>
+          <span>
+          Комментарий:<br>
+            <%= f.text_area(:body,
+                            {class: 'form-control',
+                             :placeholder=>"Текст комментария",
+                             :size =>"10x7"}) %>
+        </span>
+          <br>
+          <p>
+            <%=f.submit 'Send', class: 'w-50 btn btn-lg btn-primary' %>
+          </p>
+        <% end %>
+      </div>
+
+
 </main>
